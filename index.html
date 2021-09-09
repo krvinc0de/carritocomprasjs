@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Carrito JS + VANILLA</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                <img src="https://image.flaticon.com/icons/png/512/102/102841.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                OO - Outlet Online de kevin
+              </a>
+            </div>
+        </nav>
+        <div class="container">
+            <h1 class="text-center display-1">Tenis de diversas marcas</h1>
+                <hr>
+            <div class="row" id="cards"></div>
+
+            <hr>
+            <!-- carro-->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th  scope='col'>Id de producto</th>
+                        <th  scope='col'>Producto</th>
+                        <th  scope='col'>Precio</th>
+                        <th  scope='col'>Cantidad</th>
+                        <th  scope='col'>Agregar/Quitar</th>
+                        <th  scope='col'>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="items">
+                </tbody>
+                <tfoot>
+                    <tr id = "footer">
+                        <th class="text-center" scope="row" colspan="6">Carrito Vacio</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <template id="template-card">
+            <div class="col-12 mb-2 col-md-4">
+                <div class="card">
+                    <img src="" alt="" class="card-img-top" style="width: auto; height: 250px;">
+                    <div class="card-body">
+                        <h5>titulo</h5>
+                        <p>precio</p>
+                        <button class="btn btn-dark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z"/>
+                            </svg> Comprar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id ="template-footer">
+            <th scope="row" colspan="2">total de productos</th>
+            <td>10</td>
+            <td>
+                <button class="btn btn-danger btn-sm" id="vaciar-carrito">
+                    vaciar carrito
+                </button>
+            </td>
+            <td>$ <span>500</span></td>
+        </template>
+        <template id="template-carrito">
+            <tr>
+                <th scope="row">id</th>
+                <td>titulo</td>
+                <td>precio</td>
+                <td>agregar/quitar</td>
+                <td>
+                    <button class="btn btn-success btn-sm"> Agregar </button>
+                    <button class="btn btn-danger btn-sm"> Quitar </button>
+                </td>
+                <td>$ <span>500</span></td>
+            </tr>
+        </template>
+    <script src="app.js"></script>
+    </body>
+</html>
